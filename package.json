@@ -1,0 +1,66 @@
+{
+  "name": "loop-system",
+  "version": "0.0.1",
+  "description": "Loop system",
+  "main": "lib-es6/index.js",
+  "scripts": {
+    "clean": "shx rm -rf _bundles lib lib-es6",
+    "build-commonjs": "tsc",
+    "build-es6": "tsc -m es6 --outDir lib-es6",
+    "build-umd": "webpack --mode production",
+    "build:watch": "tsc -w",
+    "build": "npm run clean && npm run build-commonjs && npm run build-es6 && npm run build-umd",
+    "start": "karma start karma.config.js",
+    "test": "karma start karma.config.js --single-run",
+    "test-watch": "karma start karma.config.js",
+    "bench:loop": "node benchmark/loop.bench.js",
+    "bench:utils": "node benchmark/utils.bench.js",
+    "lint": "tslint \"src/**/*.ts\"",
+    "doc": "typedoc --out doc src --name loop-system --readme README.md --module commonsjs --target es6 --theme default --exclude \"**/*+(index|.spec|.e2e).ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nherault/loop-system.git"
+  },
+  "keywords": [
+    "library",
+    "typescript",
+    "karma",
+    "jasmine",
+    "starter"
+  ],
+  "author": "Nicolas Herault <nayran@free.fr> (http://github.com/nherault)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nherault/loop-system/issues"
+  },
+  "homepage": "https://github.com/nherault/loop-system#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/core-js": "^2.5.0",
+    "@types/jasmine": "^2.8.9",
+    "@types/node": "^10.12.2",
+    "benchmark": "^2.1.4",
+    "eslint": "^5.9.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jasmine-core": "^3.2.1",
+    "jasmine-expect": "^3.8.3",
+    "karma": "^3.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.2",
+    "karma-typescript": "^3.0.13",
+    "shx": "^0.3.2",
+    "ts-loader": "^4.4.2",
+    "tslint": "^5.7.0",
+    "typedoc": "^0.12.0",
+    "typescript": "^3.0.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  }
+}

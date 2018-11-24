@@ -1,0 +1,1 @@
+Starter for typescript library with karma / jasmine test

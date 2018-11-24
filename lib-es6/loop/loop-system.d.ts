@@ -1,0 +1,31 @@
+import { ComputeElement, ComputeFct, ComputeTypes, LoopOptions, LoopOptionsParams, LoopSystem } from './loop-system.types';
+export declare class LoopSystemDefault implements LoopSystem {
+    private dt;
+    private last;
+    private renders;
+    private updates;
+    private requestAnimationFrameId;
+    private isSimulationRunning;
+    private options;
+    private currentOptions;
+    private afterFrameTasks;
+    constructor();
+    start(options?: LoopOptionsParams): LoopSystem;
+    stop(): LoopSystem;
+    startSimulation(refreshRate?: number, options?: LoopOptionsParams): LoopSystem;
+    stopSimulation(): LoopSystem;
+    setCurrentOptions(options: LoopOptionsParams): LoopSystem;
+    addAfterFrameTask(task: () => void): LoopSystem;
+    getOptions(): LoopOptions;
+    getCurrentOptions(): LoopOptions;
+    addCompute(name: ComputeTypes, compute: ComputeFct | ComputeElement): LoopSystem;
+    removeComputes(name: ComputeTypes, id?: string | string[]): LoopSystem;
+    setEnableComputes(name: ComputeTypes, enable: boolean, id?: string | string[]): LoopSystem;
+    removeAll(): LoopSystem;
+    private setOptions;
+    private nextRequestAnimationFrame;
+    private frame;
+    private manageAfterFrame;
+    private updateWithSteps;
+    private compute;
+}
