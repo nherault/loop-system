@@ -37,8 +37,8 @@ describe('utils', () => {
           { code: 'A5' },
         ];
         expect(arrayWithOrder.sort(sortWithOrder)).toEqual([
-          { code: 'A5' },
           { code: 'A2' },
+          { code: 'A5' },
           { code: 'A3', order: 1 },
           { code: 'A1', order: 2 },
           { code: 'A4', order: 3 },
