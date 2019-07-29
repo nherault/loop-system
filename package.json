@@ -4,6 +4,7 @@
   "description": "Loop system",
   "main": "lib-es6/index.js",
   "scripts": {
+    "prepare": "npm run build",
     "clean": "shx rm -rf _bundles lib lib-es6",
     "build-commonjs": "tsc",
     "build-es6": "tsc -m es6 --outDir lib-es6",
